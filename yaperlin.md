@@ -1,7 +1,6 @@
 
 # Understanding Perlin Noise
 
-[adrian's soapbox about Understanding Perlin Noise](http://adrianb.io/2014/08/09/perlinnoise.html)
 
 
 This article is to present an easy-to-understand analysis of Ken Perlin's [Improved Perlin Noise(java),published in 2002.](http://mrl.nyu.edu/~perlin/noise/).

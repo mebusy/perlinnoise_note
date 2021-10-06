@@ -1,10 +1,7 @@
 
 # notes of perlin noise
 
-- [understand perlin noise](yaperlin.md)
-
-
-
+- [adrian's soapbox about Understanding Perlin Noise](http://adrianb.io/2014/08/09/perlinnoise.html)
 
 
 
