@@ -14,7 +14,8 @@ public final class perlin {
       int A = p[X  ]+Y, AA = p[A]+Z, AB = p[A+1]+Z,      // HASH COORDINATES OF
           B = p[X+1]+Y, BA = p[B]+Z, BB = p[B+1]+Z;      // THE 8 CUBE CORNERS,
 
-      double ret =  lerp(w, lerp(v, lerp(u, grad(p[AA  ], x  , y  , z   ),  // AND ADD
+      // return [-1,1]
+      return  lerp(w, lerp(v, lerp(u, grad(p[AA  ], x  , y  , z   ),  // AND ADD
                                      grad(p[BA  ], x-1, y  , z   )), // BLENDED
                              lerp(u, grad(p[AB  ], x  , y-1, z   ),  // RESULTS
                                      grad(p[BB  ], x-1, y-1, z   ))),// FROM  8
@@ -23,9 +24,8 @@ public final class perlin {
                              lerp(u, grad(p[AB+1], x  , y-1, z-1 ),
                                      grad(p[BB+1], x-1, y-1, z-1 ))));
 
-      // modify
-      return (ret+1)/2 ;// For convenience we bind the result to 0 - 1 (theoretical min/max before is [-1, 1])
    }
+
    static double fade(double t) { return t * t * t * (t * (t * 6 - 15) + 10); }
    static double lerp(double t, double a, double b) { return a + t * (b - a); }
    static double grad(int hash, double x, double y, double z) {
