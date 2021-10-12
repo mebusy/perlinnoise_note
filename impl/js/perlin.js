@@ -14,8 +14,8 @@
             maxValue = 0;  // Used for normalizing result to 0.0 - 1.0
             for(var i=0;i<octaves;i++) {
                 //*
-                // bind the result of perlin to 0 - 1 (theoretical min/max before is [-1, 1])
-                total += ( noise( seed+ x * frequency, seed+ y * frequency, seed+ z * frequency ) +1 ) / 2 * amplitude; 
+                // bind the result of perlin to 0 - 1 (min/max of noise() is [-.5, .5])
+                total += ( noise( seed+ x * frequency, seed+ y * frequency, seed+ z * frequency ) + 0.5 )  * amplitude; 
                 /*/
                 total += noise(x * frequency, y * frequency, z * frequency) * amplitude; 
                 //*/
@@ -28,7 +28,8 @@
             return total/maxValue;
         }
 
-
+        // need to manually add seed to x,y,z to make noise random for each game
+        // return [-0.5, 0.5]
         function noise(x, y=0.0, z=0.0) {
            var X = Math.floor(x) & 255,                  // FIND UNIT CUBE THAT
                Y = Math.floor(y) & 255,                  // CONTAINS POINT.
