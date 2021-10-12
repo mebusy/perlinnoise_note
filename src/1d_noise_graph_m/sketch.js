@@ -27,7 +27,7 @@ function draw() {
     stroke(255);
     // let y = random(height);
     // here, use my customize perlin_noise instead
-    let y = perlin_noise(xoff) * height;
+    let y = octaveperlin(xoff) * height;
     vertex(x, y);
 
     xoff += inc;
