@@ -1,15 +1,24 @@
 // Immediately Invoked Function
 (
     function(global) {
-        var OCTAVES = 4 ; // default
-        var PERSISTENCE = 0.5 ;
-        function octaveperlin( x,  y=0.0,  z=0.0,  octaves = OCTAVES,  persistence=PERSISTENCE) {
+        var OCTAVES = 4 ; // default to medium smooth
+        var PERSISTENCE = 0.5 ; // 50% reduction/octave
+
+        // re-seed as initialization
+        const seed = Math.floor( Math.random()*10000000 );
+        function octaveperlin( x, y=0.0, z=0.0) {
+            const octaves = OCTAVES,  persistence=PERSISTENCE;
             total = 0;
             frequency = 1;
             amplitude = 1;
             maxValue = 0;  // Used for normalizing result to 0.0 - 1.0
             for(var i=0;i<octaves;i++) {
-                total += noise(x * frequency, y * frequency, z * frequency) * amplitude;
+                //*
+                // bind the result of perlin to 0 - 1 (theoretical min/max before is [-1, 1])
+                total += ( noise( seed+ x * frequency, seed+ y * frequency, seed+ z * frequency ) +1 ) / 2 * amplitude; 
+                /*/
+                total += noise(x * frequency, y * frequency, z * frequency) * amplitude; 
+                //*/
                 
                 maxValue += amplitude;
                 
