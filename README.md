@@ -8,6 +8,7 @@
 ## Other
 
 - [1D perlin noise graph](https://mebusy.github.io/perlinnoise_note/src/1d_noise_graph/index.html)
+- [1D perlin noise graph custom](https://mebusy.github.io/perlinnoise_note/src/1d_noise_graph_m/index.html)
 
 
 ```bash
