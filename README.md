@@ -12,7 +12,7 @@
 
 
 ```bash
-git checkout --orphan gh-pages
+git checkout -b gh-pages
 
 git push -u origin gh-pages
 ```
