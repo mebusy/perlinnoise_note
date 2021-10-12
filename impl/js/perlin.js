@@ -1,14 +1,26 @@
 // Immediately Invoked Function
 (
     function(global) {
-
-        function noise(x, y=0.0, z=0.0) {
-            var n = perlin( x,y,z );
-            // For convenience we bind the result to 0 - 1 (theoretical min/max before is [-1, 1])
-            return (n+1)/2; 
+        var OCTAVES = 4 ; // default
+        var PERSISTENCE = 0.5 ;
+        function octaveperlin( x,  y=0.0,  z=0.0,  octaves = OCTAVES,  persistence=PERSISTENCE) {
+            total = 0;
+            frequency = 1;
+            amplitude = 1;
+            maxValue = 0;  // Used for normalizing result to 0.0 - 1.0
+            for(var i=0;i<octaves;i++) {
+                total += noise(x * frequency, y * frequency, z * frequency) * amplitude;
+                
+                maxValue += amplitude;
+                
+                amplitude *= persistence;
+                frequency *= 2;
+            }
+            return total/maxValue;
         }
 
-        function perlin(x, y=0.0, z=0.0) {
+
+        function noise(x, y=0.0, z=0.0) {
            var X = Math.floor(x) & 255,                  // FIND UNIT CUBE THAT
                Y = Math.floor(y) & 255,                  // CONTAINS POINT.
                Z = Math.floor(z) & 255;
@@ -61,7 +73,8 @@
 
         // before the end of function(global) 
         // Export something the global object
-        global.perlin_noise = noise;
+        global.perlin_noise = noise ;
+        global.octaveperlin = octaveperlin ;
 
     } // end function(global)
 
