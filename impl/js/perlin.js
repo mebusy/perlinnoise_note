@@ -4,6 +4,19 @@
         var OCTAVES = 4 ; // default to medium smooth
         var PERSISTENCE = 0.5 ; // 50% reduction/octave
 
+        function perlin_detail( nOctave=null , persistence= null ) {
+            var changed = 0 ;
+            if (nOctave != null) {
+                OCTAVES = nOctave ;
+                changed |= 1 ;
+            }
+            if (persistence != null) {
+                PERSISTENCE = persistence;
+                changed |= 2 ;
+            }
+            return changed ;
+        }
+
         // re-seed as initialization
         const seed = Math.floor( Math.random()*10000000 );
         function octaveperlin( x, y=0.0, z=0.0) {
@@ -85,6 +98,7 @@
         // Export something the global object
         global.perlin_noise = noise ;
         global.octaveperlin = octaveperlin ;
+        global.perlin_detail = perlin_detail;
 
     } // end function(global)
 
