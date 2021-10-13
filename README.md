@@ -9,6 +9,8 @@
 
 - [1D perlin noise graph](https://mebusy.github.io/perlinnoise_note/src/1d_noise_graph/index.html)
 - [1D perlin noise graph custom](https://mebusy.github.io/perlinnoise_note/src/1d_noise_graph_m/index.html)
+- [2D perlin noise](https://mebusy.github.io/perlinnoise_note/src/2d_noise/index.html)
+- [2D perlin noise custom](https://mebusy.github.io/perlinnoise_note/src/2d_noise_m/index.html)
 
 
 ```bash
