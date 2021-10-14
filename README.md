@@ -13,6 +13,7 @@
 - [2D perlin noise custom](https://mebusy.github.io/perlinnoise_note/src/2d_noise_m/index.html)
 - [flow field vector custom](https://mebusy.github.io/perlinnoise_note/src/flow_field_m/index.html)
 - [flow field custom](https://mebusy.github.io/perlinnoise_note/src/flow_field2_m/index.html)
+- [3D terrain](https://mebusy.github.io/perlinnoise_note/src/terrain_m/index.html)
 
 
 ```bash
