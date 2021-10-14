@@ -14,6 +14,8 @@
 - [flow field vector custom](https://mebusy.github.io/perlinnoise_note/src/flow_field_m/index.html)
 - [flow field custom](https://mebusy.github.io/perlinnoise_note/src/flow_field2_m/index.html)
 - [3D terrain](https://mebusy.github.io/perlinnoise_note/src/terrain_m/index.html)
+- [bubble](https://mebusy.github.io/perlinnoise_note/src/bubble_m/index.html)
+
 
 
 ```bash
