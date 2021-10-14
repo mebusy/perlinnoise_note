@@ -6,7 +6,7 @@
 
 // This example has been updated to use es6 syntax. To learn more about es6 visit: https://thecodingtrain.com/Tutorials/16-javascript-es6
 
-let inc = 0.1;
+let inc = 0.1/2;
 var scl = 10;
 var cols, rows;
 
@@ -31,7 +31,7 @@ function draw() {
     for (let x = 0; x < cols; x++) {
       let index = (x + y * width) * 4;
       // let r = random(255);
-      let angle = noise(xoff, yoff, zoff ) * TWO_PI ;
+      let angle = perlin_noise(xoff, yoff, zoff ) * TWO_PI ;
       var v = p5.Vector.fromAngle(angle); // horizontal right 
       xoff += inc;
 
@@ -49,7 +49,7 @@ function draw() {
     yoff += inc;
 
   }
-  zoff += 0.03;
+  zoff += 0.03/2;
   // updatePixels();
   //noLoop();
   fr.html( floor(frameRate()));
