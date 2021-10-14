@@ -31,7 +31,7 @@ function draw() {
     for (let x = 0; x < cols; x++) {
       let index = (x + y * width) * 4;
       // let r = random(255);
-      let angle = perlin_noise(xoff, yoff, zoff ) * TWO_PI ;
+      let angle = octaveperlin(xoff, yoff, zoff ) * TWO_PI ;
       var v = p5.Vector.fromAngle(angle); // horizontal right 
       xoff += inc;
 

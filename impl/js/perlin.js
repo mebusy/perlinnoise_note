@@ -96,7 +96,7 @@
 
         // before the end of function(global) 
         // Export something the global object
-        global.perlin_noise = noise ;
+        global.perlin_noise1 = noise ;
         global.octaveperlin = octaveperlin ;
         global.perlin_detail = perlin_detail;
 

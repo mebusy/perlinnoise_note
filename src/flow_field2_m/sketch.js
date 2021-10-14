@@ -41,7 +41,7 @@ function draw() {
     for (let x = 0; x < cols; x++) {
       let index = x + y * cols;
       // let r = random(255);
-      let angle = perlin_noise(xoff, yoff, zoff ) * TWO_PI *4 ; // *4 is to provide more randomness
+      let angle = octaveperlin(xoff, yoff, zoff ) * TWO_PI *4 ; // *4 is to provide more randomness
       var v = p5.Vector.fromAngle(angle); // horizontal right 
       v.setMag(1);
       flowfield[index] = v;
