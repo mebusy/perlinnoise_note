@@ -17,8 +17,16 @@
             return changed ;
         }
 
+
         // re-seed as initialization
-        const seed = Math.floor( Math.random()*10000000 );
+        var seed = Math.floor( Math.random()*10000000 );
+        function perlin_seed( _seed ) {
+            if(!isNaN( _seed)){
+                seed = _seed ;
+            }
+            return seed;
+        }
+
         function octaveperlin( x, y=0.0, z=0.0) {
             const octaves = OCTAVES,  persistence=PERSISTENCE;
             total = 0;
@@ -99,6 +107,7 @@
         global.perlin_noise1 = noise ;
         global.octaveperlin = octaveperlin ;
         global.perlin_detail = perlin_detail;
+        global.perlin_seed = perlin_seed;
 
     } // end function(global)
 
